@@ -1,6 +1,5 @@
-#include "chess.h"
-#define _CRT_SECURE_NO_WARNINGS
-#define SIZE 8
+#include "PrintLogic.h"
+#include "GameLogic.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,7 +24,7 @@ void main() {
 		} else strcpy(fen, defaultFen);
 
 		createBoard(board, fen);
-		printf("_____New Game_____\n\nFor help at any point, enter \"help\".\n\n");
+		printf("\n_____New Game_____\n\nFor help at any point, enter \"help\".\n\n");
 
 		printBoard(board);
 		do {
@@ -57,9 +56,10 @@ void main() {
 				continue;
 			}
 
-			if (makeMove(board, pgn, (i + 1) % 2))
+			if (makeMove(board, pgn, (i + 1) % 2)) {
 				i++;
-			else
+                printBoard(board);
+            } else
 				printf("Illegal move/input\n\n");
 
 		} while (!makeMove(board, pgn, (i + 1) % 2));
