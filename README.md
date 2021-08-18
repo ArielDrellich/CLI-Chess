@@ -1,5 +1,5 @@
-# CLI-Chess
-A 2-player text based chess game.
+#Chess
+A 2-player text based CLI chess game.
 
 - Start a new game or continue an existing game by inputting a FEN.
 - Uses offical PGN format to make moves.
